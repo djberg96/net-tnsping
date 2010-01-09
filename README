@@ -1,23 +1,15 @@
 == Description
-   This package emulates the Oracle tnsping utility.
+   The net-tnsping library emulates the Oracle tnsping utility. It pings
+   both the listener and the datasource.
 
 == Prerequisites
-   Ruby 1.8.0 or later
-   dbi
-   net-ping 1.0.0 or later
-   Any of the Oracle database drivers (oracle, oci8, ruby9i, etc)
+   * dbi
+   * net-ping
+   * Any of the Oracle database drivers (oracle, oci8, ruby9i, etc)
    
 == Installation
+   gem install net-tnsping
 
-=== Manual Installation
-   rake test (optional)
-   rake install
-   
-=== Gem Installation
-   rake test (optional)
-   ruby net-tnsping.gemspec
-   gem install net-tnsping-<version>.gem
-	
 === Test Note
    You may want to manually tweak one instance variable (@@database) in the
    test suite in order to get a more robust set of test results. Set it to
@@ -37,7 +29,7 @@
 
 == Constants
 VERSION
-   The version number of this package, returned as a String.
+   The version number of this library, returned as a String.
 
 == Class Methods
 Ping::TNS.new(db, driver="OCI8", host=nil, port=1521, timeout=5)   
@@ -165,7 +157,7 @@ Ping::TNS#tns_file=(path)
    more reliable solution.
 
 == Known Bugs
-   None that I'm aware of.  Please log any bug reports on the project page
+   None that I'm aware of. Please log any bug reports on the project page
    at http://www.rubyforge.org/projects/shards
 
 == Acknowledgements
@@ -173,7 +165,7 @@ Ping::TNS#tns_file=(path)
    with some questions I had.
 
 == Copyright
-   (C) 2003-2009 Daniel J. Berger
+   (C) 2003-2010 Daniel J. Berger
    All rights reserved.
 	
 == Warranty
@@ -186,5 +178,3 @@ Ping::TNS#tns_file=(path)
 
 == Author
    Daniel J. Berger
-   djberg96 at nospam at gmail dot com
-   imperator on IRC (irc.freenode.net)
