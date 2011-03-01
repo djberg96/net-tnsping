@@ -14,7 +14,7 @@ module Net
     VERSION = '1.3.2'
 
     # Database name.
-    attr_accessor :db
+    attr_accessor :database
 
     # Database source name.
     attr_accessor :dsn
@@ -34,9 +34,6 @@ module Net
     # The name of the oracle driver to use for connections. Defaults to OCI8.
     attr_accessor :driver
 
-    # The timeout value for connection attempts. The default is 5 seconds.
-    attr_accessor :timeout
-
     # A list of hosts for the given database name.
     attr_reader :hosts
 
@@ -49,13 +46,13 @@ module Net
     # Creates and returns a new Ping::TNS object. If the db specified cannot
     # be found in the tnsnames.ora file, then a Ping::TNS::Error is raised.
     #
-    def initialize(db, driver='OCI8', host=nil, port=1521, timeout=5)
-      @db        = db
-      @dsn       = "dbi:#{driver}:" << db
+    def initialize(database, driver='OCI8', host=nil, port=1521, timeout=5)
+      @database  = database
+      @dsn       = "dbi:#{driver}:" << database
       @host      = host
       @timeout   = timeout
       @port      = port
-      @tns_admin = tns_admin
+      @driver    = driver
       @ports     = []  # There can be more than one host/port
       @hosts     = []  # for each dsn.  Try them in order.
       @sid       = nil
@@ -85,7 +82,7 @@ module Net
       end
     end
 
-    # Sets the port that the Ping::TNS#ping_listener? method will use.  If
+    # Sets the port that the Ping::TNS#ping_listener? method will use. If
     # this is set, then a ping will only be attempted on this port
     # regardless of what is in the tnsnames.ora file.
     #
@@ -101,6 +98,9 @@ module Net
     #
     # If you specify a host and port in the constructor, then the attempt will
     # only be made against that host on the given port.
+    #
+    # Remember, this only pings the listener. If you want to ping the listener
+    # and the database, use the ping_all? method.
     #--
     # Try each host/port listed for a given entry.  Return a true result if
     # any one of them succeeds and break out of the loop.
@@ -186,10 +186,10 @@ module Net
     # Search for the dsn entry within the tnsnames.ora file and get the host
     # and port information.  Private method.
     #
-    def parse_tns_file(file=@tns_file, db=@db)
+    def parse_tns_file(file=@tns_file, db=@database)
       re_blank      = /^$/
       re_comment    = /^#/
-      re_tns_sentry = /^#{db}.*?=/                 # specific entry
+      re_tns_sentry = /^#{db}.*?=/i                # specific entry
       re_tns_gentry = /^\w.*?=/                    # generic entry
       re_tns_pair   = /\w+\s*\=\s*[\w\.]+/         # used to parse key=val
       re_keys       = /\bhost\b|\bport\b|\bsid\b/i
@@ -245,7 +245,7 @@ module Net
 
     # Aliases
 
-    alias database db
+    alias db database
     alias database_source_name dsn
     alias ping_listener? ping?
     alias oracle_home ora_home
