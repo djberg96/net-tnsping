@@ -13,7 +13,7 @@
 === Test Note
    You may want to manually tweak one instance variable (@@database) in the
    test suite in order to get a more robust set of test results. Set it to
-   a known database name.
+   a known database name. By default it uses "XE" (Express Edition).
 
 == Synopsis
    require "net/tnsping"
@@ -22,9 +22,9 @@
    t = Ping::TNS.new("my_db")
 
    if t.ping?
-      puts "Database appears to be up and running"
+     puts "Database appears to be up and running"
    else
-      puts "There was a problem: " + t.exception
+     puts "There was a problem: " + t.exception
    end
 
 == Constants
@@ -165,7 +165,7 @@ Ping::TNS#tns_file=(path)
    with some questions I had.
 
 == Copyright
-   (C) 2003-2010 Daniel J. Berger
+   (C) 2003-2011 Daniel J. Berger
    All rights reserved.
 	
 == Warranty
