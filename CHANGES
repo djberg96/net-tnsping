@@ -1,4 +1,4 @@
-== 1.3.2 - ???
+== 1.3.2 - 1-Mar-2011
 * Case is now ignored for the database name when searching through the
   tnsnames.ora file.
 * Removed explicit timeout accessor. It's already inherited.
@@ -6,7 +6,8 @@
 * Removed a useless call to tns_admin in the constructor.
 * Flip-flopped the db and database accessor and alias.
 * Refactored tests to use declarative syntax, added some tests, and
-  did some general refactoring.
+  did some general refactoring. Also, the default database name is
+  set to "XE" (Express Edition). Change as needed.
 * Updated the Rakefile, removing the non-gem installation task, and
   adding a clean task.
 * Updated the gemspec. The gem build is now handled by a rake task.
