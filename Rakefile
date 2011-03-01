@@ -1,24 +1,26 @@
 require 'rake'
+require 'rake/clean'
 require 'rake/testtask'
 
-desc "Install the net-tnsping library (non-gem)"
-task :install do
-   dest = File.join(Config::CONFIG['sitelibdir'], 'net')
-   Dir.mkdir(dest) unless File.exists? dest
-   cp 'lib/net/tnsping.rb', dest, :verbose => true
-end
+CLEAN.include("**/*.gem", "**/*.rbc", "**/*.log")
 
-desc "Install the net-tnsping library as a gem"
-task :install_gem do
-   ruby 'net-tnsping.gemspec'
-   file = Dir["*.gem"].first
-   sh "gem install #{file}"
+namespace :gem do
+  desc "Install the net-tnsping library as a gem"
+  task :install_gem do
+    spec = eval(IO.read('net-tnsping.gemspec'))
+    file = Dir["*.gem"].first
+    sh "gem install #{file}"
+  end
 end
 
 desc "Run the example program"
 task :example do |dsn|
-   ruby "-Ilib examples/example_tnsping.rb #{dsn}"end
+  ruby "-Ilib examples/example_tnsping.rb #{dsn}"
+end
 
 Rake::TestTask.new do |t|
-   t.warning = true
+  t.warning = true
+  t.verbose = true
 end
+
+task :default => :test
