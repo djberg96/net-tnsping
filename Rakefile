@@ -5,10 +5,15 @@ require 'rake/testtask'
 CLEAN.include("**/*.gem", "**/*.rbc", "**/*.log")
 
 namespace :gem do
-  desc "Install the net-tnsping library as a gem"
-  task :install_gem do
+  desc "Create the net-tnsping gem"
+  task :create => [:clean] do
     spec = eval(IO.read('net-tnsping.gemspec'))
-    file = Dir["*.gem"].first
+    Gem::Builder.new(spec).build
+  end
+
+  desc "Install the net-tnsping gem"
+  task :install => [:create] do
+    file = Dir['*.gem'].first
     sh "gem install #{file}"
   end
 end
