@@ -11,7 +11,7 @@ module Net
     class Error < StandardError; end
 
     # The version of the net-tnsping library.
-    VERSION = '1.3.2'
+    VERSION = '1.3.3'
 
     # Database name.
     attr_accessor :database
@@ -191,7 +191,7 @@ module Net
       re_comment    = /^#/
       re_tns_sentry = /^#{db}.*?=/i                # specific entry
       re_tns_gentry = /^\w.*?=/                    # generic entry
-      re_tns_pair   = /\w+\s*\=\s*[\w\.]+/         # used to parse key=val
+      re_tns_pair   = /\w+\s*\=\s*[\w\.-]+/        # used to parse key=val
       re_keys       = /\bhost\b|\bport\b|\bsid\b/i
 
       data_string = ""
