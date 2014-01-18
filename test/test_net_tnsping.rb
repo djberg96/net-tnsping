@@ -4,10 +4,7 @@
 # Test suite for the net-tnsping library. This should be run via the
 # 'rake test' task.
 ########################################################################
-require 'rubygems'
-gem 'test-unit'
-
-require 'test/unit'
+require 'test-unit'
 require 'net/tnsping'
 
 class TC_TNS_Ping < Test::Unit::TestCase
@@ -23,7 +20,7 @@ class TC_TNS_Ping < Test::Unit::TestCase
   end
 
   test "version number is expected value" do
-    assert_equal('1.3.2', Net::Ping::TNS::VERSION)
+    assert_equal('1.3.3', Net::Ping::TNS::VERSION)
   end
 
   test "database reader basic functionality" do
