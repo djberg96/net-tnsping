@@ -10,11 +10,6 @@
 == Installation
    gem install net-tnsping
 
-=== Test Note
-   You may want to manually tweak one instance variable (@@database) in the
-   test suite in order to get a more robust set of test results. Set it to
-   a known database name. By default it uses "XE" (Express Edition).
-
 == Synopsis
    require "net/tnsping"
    include Net
@@ -139,6 +134,11 @@ Ping::TNS#tns_file=(path)
    Then, it attempts to make a connection using a bogus name and password,
    looking for error ORA-1017.
 
+=== Test Note
+   You may want to manually tweak one instance variable (@@database) in the
+   test suite in order to get a more robust set of test results. Set it to
+   a known database name. By default it uses "XE" (Express Edition).
+
 == Potential Questions
    Q: "Why didn't you just wrap a backticked tnsping call?"
 
@@ -157,15 +157,15 @@ Ping::TNS#tns_file=(path)
    more reliable solution.
 
 == Known Bugs
-   None that I'm aware of. Please log any bug reports on the project page
-   at http://www.rubyforge.org/projects/shards
+   None that I'm aware of. Please log any bug reports on the project page at
+   http://github.com/djberg96/net-tnsping   
 
 == Acknowledgements
    Thanks go to Bryan Stanaway, a colleague and Oracle DBA who helped me out
    with some questions I had.
 
 == Copyright
-   (C) 2003-2011 Daniel J. Berger
+   (C) 2003-2014 Daniel J. Berger
    All rights reserved.
 	
 == Warranty
