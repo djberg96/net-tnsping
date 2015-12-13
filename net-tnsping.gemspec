@@ -1,17 +1,17 @@
 require 'rubygems'
 
 Gem::Specification.new do |spec|
-  spec.name      = 'net-tnsping'
-  spec.version   = '1.3.3'
-  spec.license   = 'Artistic 2.0'
-  spec.author    = 'Daniel J. Berger'
-  spec.email     = 'djberg96@gmail.com'
-  spec.homepage  = 'http://github.com/djberg96/net-tnsping'
-  spec.summary   = 'A library for pinging Oracle listeners and databases'
-  spec.test_file = 'test/test_net_tnsping.rb'
-  spec.files     = Dir['**/*'].reject{ |f| f.include?('git') }
+  spec.name       = 'net-tnsping'
+  spec.version    = '1.3.4'
+  spec.license    = 'Artistic 2.0'
+  spec.author     = 'Daniel J. Berger'
+  spec.email      = 'djberg96@gmail.com'
+  spec.homepage   = 'http://github.com/djberg96/net-tnsping'
+  spec.summary    = 'A library for pinging Oracle listeners and databases'
+  spec.test_file  = 'test/test_net_tnsping.rb'
+  spec.files      = Dir['**/*'].reject{ |f| f.include?('git') }
+  spec.cert_chain = Dir['certs/*']
 
-  spec.rubyforge_project = 'shards'
   spec.extra_rdoc_files  = ['CHANGES', 'MANIFEST', 'README']
 
   spec.add_dependency('net-ping')
