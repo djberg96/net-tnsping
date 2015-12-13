@@ -20,7 +20,7 @@ class TC_TNS_Ping < Test::Unit::TestCase
   end
 
   test "version number is expected value" do
-    assert_equal('1.3.3', Net::Ping::TNS::VERSION)
+    assert_equal('1.3.4', Net::Ping::TNS::VERSION)
   end
 
   test "database reader basic functionality" do

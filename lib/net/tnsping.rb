@@ -11,7 +11,7 @@ module Net
     class Error < StandardError; end
 
     # The version of the net-tnsping library.
-    VERSION = '1.3.3'
+    VERSION = '1.3.4'
 
     # Database name.
     attr_accessor :database
