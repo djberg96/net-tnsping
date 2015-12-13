@@ -3,6 +3,8 @@
 * README
 * Rakefile
 * net-tnsping.gemspec
+* cert/djberg96_pub.pem
 * examples/example_tnsping.rb
+* lib/net-tnsping.rb
 * lib/net/tnsping.rb
 * test/test_net_tnsping.rb
