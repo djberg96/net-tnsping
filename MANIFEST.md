@@ -1,6 +1,6 @@
-* CHANGES
-* MANIFEST
-* README
+* CHANGES.md
+* MANIFEST.md
+* README.md
 * Rakefile
 * net-tnsping.gemspec
 * cert/djberg96_pub.pem

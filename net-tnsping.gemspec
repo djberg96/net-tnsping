@@ -12,8 +12,6 @@ Gem::Specification.new do |spec|
   spec.files      = Dir['**/*'].reject{ |f| f.include?('git') }
   spec.cert_chain = Dir['certs/*']
 
-  spec.extra_rdoc_files  = ['CHANGES', 'MANIFEST', 'README']
-
   spec.add_dependency('net-ping')
   spec.add_development_dependency('rake')
   spec.add_development_dependency('test-unit')
