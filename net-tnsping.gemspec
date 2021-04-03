@@ -3,7 +3,7 @@ require 'rubygems'
 Gem::Specification.new do |spec|
   spec.name       = 'net-tnsping'
   spec.version    = '1.3.4'
-  spec.license    = 'Artistic 2.0'
+  spec.license    = 'Artistic-2.0'
   spec.author     = 'Daniel J. Berger'
   spec.email      = 'djberg96@gmail.com'
   spec.homepage   = 'http://github.com/djberg96/net-tnsping'

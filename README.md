@@ -160,7 +160,7 @@ First, it attempts to ping the database using the appropriate port via TCP.
 Then, it attempts to make a connection using a bogus name and password,
 looking for error ORA-1017.
 
-##= Test Note
+### Test Note
 You may want to manually tweak one instance variable (@@database) in the
 test suite in order to get a more robust set of test results. Set it to
 a known database name. By default it uses "XE" (Express Edition).
