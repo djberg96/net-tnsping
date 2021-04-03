@@ -1,3 +1,9 @@
+# MAINTAINER WANTED
+
+I haven't used Oracle or this library for many years. I would like to
+turn it over to someone who is. If you are interested please contact me,
+and we can discuss transferring the repository.
+
 ## Description
 The net-tnsping library emulates the Oracle tnsping utility. It pings
 both the listener and the datasource.
