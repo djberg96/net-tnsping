@@ -8,9 +8,9 @@ namespace :gem do
   desc "Create the net-tnsping gem"
   task :create => [:clean] do
     require 'rubygems/package'
-    spec = eval(IO.read('net-tnsping.gemspec'))
+    spec = Gem::Specification.load('net-tnsping.gemspec')
     spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
-    Gem::Package.build(spec, true)
+    Gem::Package.build(spec)
   end
 
   desc "Install the net-tnsping gem"
